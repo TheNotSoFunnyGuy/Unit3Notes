@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Leo a diam sollicitudin tempor. Lorem ipsum dolor sit amet consectetur
+            adipiscing elit. Vitae ultricies leo integer malesuada. Urna et pharetra pharetra massa massa.
+            Ridiculus mus mauris vitae ultricies. Tincidunt nunc pulvinar sapien et ligula. Vivamus at augue eget arcu dictum varius.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <input type="color" id="bg" value="#FFFFFF">
+        </div>
+        <div class="row">
+            <h3>Text!</h3>
+            <input type="color" id="txt"
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    const bg = document.getElementById('bg');
+    const txt = document.getElementById('txt');
+    const clear = document.getElementById('clear');
+
+    bg.addEventListener('change', function(e){
+        content.style.backgroundColor = e.target.value;
+    })
+
+    txt.addEventListener('change', function(e){
+        content.style.color = e.target.value;
+    })
+
+    clear.addEventListener('click', function(e){
+        content.style.backgroundColor = 'white';
+        bg.value = '#FFFFFF'
+        content.style.color = 'black';
+        txt.value = '#000000'
+    })
+</script>
+</body>
+</html>
