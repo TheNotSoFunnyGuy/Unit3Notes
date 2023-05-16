@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div>
+            <div>
+                <label for="list">Item</label>
+                <input id="list" name="list" type="text">
+            </div>
+            <div>
+                <button type="submit">Add item</button>
+            </div>
+        </div>
+        <div id="content"></div>
+    </div>
+</div>
+
+<script>
+    const list = document.getElementById('list');
+    const submit = document.querySelector("button");
+    const content = document.getElementById('content');
+
+    submit.addEventListener("click", function(){
+        const grocerylist = document.createElement('h4');
+        grocerylist.innerHTML = `${list.value}`;
+        content.insertAdjacentElement('beforeend', grocerylist);
+
+        grocerylist.addEventListener("click", function(){
+            const unwantedElement = document.querySelector('h4');
+            unwantedElement.remove();
+        })
+    })
+</script>
+</body>
+</html>
