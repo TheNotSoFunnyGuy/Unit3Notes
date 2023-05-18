@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h2>Calculator</h2>
+        <div class="row">
+            <div>
+                <label for="x"></label>
+                <input id="x" name="x" type="text">
+            </div>
+            <div>
+                <label for="y"></label>
+                <input id="y" name="y" type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <button id="add">+</button>
+            </div>
+            <div>
+                <button id="subtract">-</button>
+            </div>
+            <div>
+                <button id="multiply">x</button>
+            </div>
+            <div>
+                <button id="divide">/</button>
+            </div>
+            <div>
+                <button id="remainder">%</button>
+            </div>
+            <div>
+                <button id="clear">Clear All</button>
+            </div>
+        </div>
+        <div id="history"></div>
+    </div>
+</div>
+
+
+<script>
+
+    const x = document.getElementById('x');
+    const y = document.getElementById('y');
+    const add = document.getElementById("add");
+    const subtract = document.getElementById("subtract");
+    const multiply = document.getElementById("multiply");
+    const divide = document.getElementById("divide");
+    const remainder = document.getElementById("remainder");
+    const content = document.getElementById('history');
+    const clear = document.getElementById('clear');
+
+    add.addEventListener("click", function(){
+        let num1 = +x.value;
+        let num2 = +y.value;
+        let sum = num1 + num2
+
+        const addition = document.createElement('h3');
+        addition.innerHTML = `${x.value} + ${y.value} = ${sum}`;
+        content.insertAdjacentElement('beforeend', addition);
+
+        x.value = "";
+        y.value = "";
+    })
+
+    subtract.addEventListener("click", function(){
+        let num1 = +x.value;
+        let num2 = +y.value;
+        let difference = num1 - num2
+
+        const subtraction = document.createElement('h3');
+        subtraction.innerHTML = `${x.value} - ${y.value} = ${difference}`;
+        content.insertAdjacentElement('beforeend', subtraction);
+
+        x.value = "";
+        y.value = "";
+    })
+
+    multiply.addEventListener("click", function(){
+        let num1 = +x.value;
+        let num2 = +y.value;
+        let product = num1 * num2
+
+        const multiplication = document.createElement('h3');
+        multiplication.innerHTML = `${x.value} x ${y.value} = ${product}`;
+        content.insertAdjacentElement('beforeend', multiplication);
+
+        x.value = "";
+        y.value = "";
+    })
+
+    divide.addEventListener("click", function(){
+        let num1 = +x.value;
+        let num2 = +y.value;
+        let quotient = num1 / num2
+
+        const division = document.createElement('h3');
+        division.innerHTML = `${x.value} / ${y.value} = ${quotient}`;
+        content.insertAdjacentElement('beforeend', division);
+
+        x.value = "";
+        y.value = "";
+    })
+
+    remainder.addEventListener("click", function(){
+        let num1 = +x.value;
+        let num2 = +y.value;
+        let remain = num1 % num2
+
+        const remainder = document.createElement('h3');
+        remainder.innerHTML = `${x.value} % ${y.value} = remainder ${remain}`;
+        content.insertAdjacentElement('beforeend', remainder);
+
+        x.value = "";
+        y.value = "";
+    })
+
+    clear.addEventListener('click', function(e){
+        x.value = "";
+        y.value = "";
+        content.innerHTML = "";
+    })
+</script>
+</body>
+</html>
