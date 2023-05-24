@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    background: #f3f4f6;
+    background: slategrey;
 }
 
 label {
@@ -10,20 +10,20 @@ label {
     line-height: 1.25rem;
     font-weight: 500;
     font-size: 14px;
-    color: #374151;
+    color: yellowgreen;
 }
 
 input[type="text"], textarea, select{
     font-size: .875rem;
     line-height: 1.25rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
+    border: 1px solid grey;
+    border-radius: 100px;
     padding: 8px 12px;
     margin-bottom: 12px;
-    color: #374151;
+    color: yellowgreen;
 }
 fieldset{
-    border: 1px solid #d1d5db;
+    border: 1px solid grey;
     border-radius: 6px;
     width: fit-content;
     margin-bottom: 16px;
@@ -33,7 +33,7 @@ fieldset{
 
 fieldset legend{
     font-size: 14px;
-    color: #374151;
+    color: yellowgreen;
 }
 
 input[type="checkbox"]{
@@ -54,7 +54,7 @@ section header{
 
 .row {
     display: flex;
-    gap: 16px;
+    gap: 30px;
 }
 
 
@@ -65,13 +65,17 @@ section header{
 
 .content{
     box-shadow: 0 1px 3px 0 rgba(0 0 0  0.1), 0 1px 2px -1px rgba(0 0 0  0.1);
-    background: white;
+    background: grey;
     padding: 20px;
     border-radius: 12px;
-    width: 500px;
+    width: 650px;
 }
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.content{
+    color: yellowgreen;
 }

@@ -11,11 +11,11 @@
         <h2>Calculator</h2>
         <div class="row">
             <div>
-                <label for="x"></label>
+                <label for="x">Number 1</label>
                 <input id="x" name="x" type="text">
             </div>
             <div>
-                <label for="y"></label>
+                <label for="y">Number 2</label>
                 <input id="y" name="y" type="text">
             </div>
         </div>
@@ -38,7 +38,9 @@
             <div>
                 <button id="clear">Clear All</button>
             </div>
+
         </div>
+        <p></p>
         <div id="history"></div>
     </div>
 </div>
@@ -55,12 +57,20 @@
     const remainder = document.getElementById("remainder");
     const content = document.getElementById('history');
     const clear = document.getElementById('clear');
+    const ans = document.querySelector('p');
 
     add.addEventListener("click", function(){
         let num1 = +x.value;
         let num2 = +y.value;
         let sum = num1 + num2
 
+        if (!checkIsValid(num1) || !checkIsValid(num2)) {
+            ans.textContent = 'Invalid Inputs';
+            content.innerHTML = "";
+            return;
+        }
+
+        ans.innerHTML = "";
         const addition = document.createElement('h3');
         addition.innerHTML = `${x.value} + ${y.value} = ${sum}`;
         content.insertAdjacentElement('beforeend', addition);
@@ -69,11 +79,20 @@
         y.value = "";
     })
 
+
+
     subtract.addEventListener("click", function(){
         let num1 = +x.value;
         let num2 = +y.value;
         let difference = num1 - num2
 
+        if (!checkIsValid(num1) || !checkIsValid(num2)) {
+            ans.textContent = 'Invalid Inputs';
+            content.innerHTML = "";
+            return;
+        }
+
+        ans.innerHTML = "";
         const subtraction = document.createElement('h3');
         subtraction.innerHTML = `${x.value} - ${y.value} = ${difference}`;
         content.insertAdjacentElement('beforeend', subtraction);
@@ -87,6 +106,13 @@
         let num2 = +y.value;
         let product = num1 * num2
 
+        if (!checkIsValid(num1) || !checkIsValid(num2)) {
+            ans.textContent = 'Invalid Inputs';
+            content.innerHTML = "";
+            return;
+        }
+
+        ans.innerHTML = "";
         const multiplication = document.createElement('h3');
         multiplication.innerHTML = `${x.value} x ${y.value} = ${product}`;
         content.insertAdjacentElement('beforeend', multiplication);
@@ -100,6 +126,13 @@
         let num2 = +y.value;
         let quotient = num1 / num2
 
+        if (!checkIsValid(num1) || !checkIsValid(num2)) {
+            ans.textContent = 'Invalid Inputs';
+            content.innerHTML = "";
+            return;
+        }
+
+        ans.innerHTML = "";
         const division = document.createElement('h3');
         division.innerHTML = `${x.value} / ${y.value} = ${quotient}`;
         content.insertAdjacentElement('beforeend', division);
@@ -113,6 +146,13 @@
         let num2 = +y.value;
         let remain = num1 % num2
 
+        if (!checkIsValid(num1) || !checkIsValid(num2)) {
+            ans.textContent = 'Invalid Inputs';
+            content.innerHTML = "";
+            return;
+        }
+
+        ans.innerHTML = "";
         const remainder = document.createElement('h3');
         remainder.innerHTML = `${x.value} % ${y.value} = remainder ${remain}`;
         content.insertAdjacentElement('beforeend', remainder);
@@ -125,7 +165,19 @@
         x.value = "";
         y.value = "";
         content.innerHTML = "";
+        ans.innerHTML = "";
     })
+
+
+    function checkIsValid(num){
+        if(isNaN(num)){
+            return false
+        }
+        if (num <= 0){
+            return false
+        }
+        return true
+    }
 </script>
 </body>
 </html>
