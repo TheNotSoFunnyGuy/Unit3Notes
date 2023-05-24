@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 body{
-    background: slategrey;
+    background-image: url("https://nationaltoday.com/wp-content/uploads/2022/08/22-National-Math-Day-1200x834.jpg");
+    background-size: 1950px 1000px;
 }
 
 label {
